@@ -1,0 +1,57 @@
+baseurl = "https://siontext.github.io"
+title = "Sion's Tech Blog"
+theme = "hugo-theme-cleanwhite"
+languageCode = "ko-kr"
+preserveTaxonomyNames = true
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 5
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/home-bg.jpg"
+  SEOTitle = "Sion's Tech Blog"
+  description = "기술 블로그"
+  slogan = ""
+  upstreamAttribution = true
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "페이지를 찾을 수 없습니다 :("
+  omit_categories = false
+
+  algolia_search = false
+
+  # Sidebar settings
+  sidebar_about_description = "Software Developer"
+  sidebar_avatar = "img/avatar.png"
+
+  featured_tags = true
+  featured_condition_size = 1
+
+  friends = false
+  bookmarks = false
+  about_me = true
+
+  [params.social]
+  rss            = true
+  github         = "https://github.com/siontext"
+
+  [[params.additional_menus]]
+  title =  "ARCHIVE"
+  href =  "/archive/"
+  [[params.additional_menus]]
+  title =  "ABOUT"
+  href =  "/about/"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    startLevel = 1
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
