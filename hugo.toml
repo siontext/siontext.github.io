@@ -26,7 +26,7 @@ home = ["HTML", "RSS"]
 
   # Sidebar settings
   sidebar_about_description = "Software Developer"
-  sidebar_avatar = "img/avatar.png"
+  sidebar_avatar = "img/avatar.jpg"
 
   featured_tags = true
   featured_condition_size = 1
