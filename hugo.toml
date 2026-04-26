@@ -25,7 +25,7 @@ home = ["HTML", "RSS"]
   algolia_search = false
 
   # Sidebar settings
-  sidebar_about_description = "Software Developer"
+  sidebar_about_description = "AI Backend Developer"
   sidebar_avatar = "img/avatar.jpg"
 
   featured_tags = true
