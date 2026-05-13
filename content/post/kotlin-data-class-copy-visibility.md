@@ -1,9 +1,11 @@
 ---
 title: "[Kotlin] data class copy()의 가시성 불일치 문제"
-date: 2026-04-21
+date: 2026-05-13
 tags: ["Kotlin", "data class", "copy", "ConsistentCopyVisibility"]
 categories: ["개발"]
 ---
+
+# [Kotlin] data class copy()의 가시성 불일치 문제
 
 > 경고를 그냥 넘기지 말아야 하는 이유
 
