@@ -1,0 +1,26 @@
+/* Home post list — tag colors visible on light background.
+   Theme defaults assume tags only render on the dark post header. */
+.post-preview .tags a,
+.post-preview .tags .tag {
+    color: #555;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+.post-preview .tags a:hover,
+.post-preview .tags .tag:hover,
+.post-preview .tags a:active,
+.post-preview .tags .tag:active {
+    color: #222;
+    border-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+[data-theme="dark"] .post-preview .tags a,
+[data-theme="dark"] .post-preview .tags .tag {
+    color: var(--tag-text);
+    border-color: var(--tag-border);
+}
+[data-theme="dark"] .post-preview .tags a:hover,
+[data-theme="dark"] .post-preview .tags .tag:hover {
+    color: var(--tag-text);
+    border-color: var(--tag-border-hover);
+    background-color: var(--bg-tag-active);
+}

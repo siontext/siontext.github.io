@@ -35,6 +35,8 @@ home = ["HTML", "RSS"]
   bookmarks = false
   about_me = true
 
+  custom_css = ["css/custom-overrides.css"]
+
   [params.social]
   rss            = true
   github         = "https://github.com/siontext"
