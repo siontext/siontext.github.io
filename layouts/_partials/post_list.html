@@ -1,0 +1,53 @@
+<!-- post list -->
+<div data-pagefind-ignore="all">
+{{ range $index, $element := $.Paginator.Pages }}
+<div class="post-preview">
+    <a href="{{ .Permalink }}">
+        <h2 class="post-title">
+            {{ .Title }}
+        </h2>
+	{{with .Params.subtitle }}
+        <h3 class="post-subtitle">
+            {{ . }}
+        </h3>
+	{{ end }}
+        <div class="post-content-preview">
+	{{ with .Description }}
+            {{ . }}
+        {{ else }}
+            {{ .Summary | plainify}}
+       {{ end }}
+        </div>
+    </a>
+    <p class="post-meta">
+    {{ if .Params.metadata }}
+        {{ range $index, $element := .Params.metadata }}
+            {{ if .link }}
+                <a href="{{ .link }}">{{ .text }}</a>
+            {{ else }}
+                {{ .text }}
+            {{ end }}
+        {{ end }}
+    {{ else }}
+        {{ $weekdays := dict "Monday" "월요일" "Tuesday" "화요일" "Wednesday" "수요일" "Thursday" "목요일" "Friday" "금요일" "Saturday" "토요일" "Sunday" "일요일" }}
+        Posted by {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "2006년 1월 2일" }} {{ index $weekdays (.Date.Format "Monday") }}
+        <!-- Don't show "Last Modified on" if update happened on the same day. -->
+        {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
+            <br>Last Modified on {{ .Lastmod.Format "2006년 1월 2일" }} {{ index $weekdays (.Lastmod.Format "Monday") }}
+        {{ end }}
+    {{ end }}
+    </p>
+    {{ with .Params.tags }}
+    <div class="tags">
+        {{ range . }}
+        <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
+            {{ . }}
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+</div>
+<hr>
+{{ end }}
+</div>
