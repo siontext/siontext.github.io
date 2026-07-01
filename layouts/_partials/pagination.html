@@ -1,0 +1,70 @@
+<!-- Pagination (numbered) -->
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="pagination numbered" data-pagefind-ignore="all">
+    {{ if $pag.HasPrev }}
+    <a class="page-item prev" href="{{ $pag.Prev.URL }}" aria-label="Newer Posts">&larr;</a>
+    {{ else }}
+    <span class="page-item prev disabled">&larr;</span>
+    {{ end }}
+
+    {{ $window := 2 }}
+    {{ range $pag.Pagers }}
+        {{ if or (le .PageNumber (add 1 $window)) (ge .PageNumber (sub $pag.TotalPages $window)) (and (ge .PageNumber (sub $pag.PageNumber $window)) (le .PageNumber (add $pag.PageNumber $window))) }}
+            {{ if eq . $pag }}
+    <span class="page-item active">{{ .PageNumber }}</span>
+            {{ else }}
+    <a class="page-item" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+        {{ else if or (eq .PageNumber (add 1 $window 1)) (eq .PageNumber (sub $pag.TotalPages $window 1)) }}
+    <span class="page-item ellipsis">&hellip;</span>
+        {{ end }}
+    {{ end }}
+
+    {{ if $pag.HasNext }}
+    <a class="page-item next" href="{{ $pag.Next.URL }}" aria-label="Older Posts">&rarr;</a>
+    {{ else }}
+    <span class="page-item next disabled">&rarr;</span>
+    {{ end }}
+</nav>
+
+<style>
+.pagination.numbered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35em;
+    padding: 1.5em 0 3em;
+    margin-bottom: 0;
+}
+.pagination.numbered .page-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2em;
+    height: 2.2em;
+    padding: 0 0.5em;
+    margin: 0;
+    border-radius: 4px;
+    font-size: 0.95em;
+    line-height: 1;
+    color: #8c8c8c;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+.pagination.numbered a.page-item:hover {
+    background: #f2f2f2;
+    color: #404040;
+}
+.pagination.numbered .page-item.active {
+    background: #404040;
+    color: #fff;
+    font-weight: 600;
+}
+.pagination.numbered .page-item.disabled,
+.pagination.numbered .page-item.ellipsis {
+    color: #cfcfcf;
+    cursor: default;
+}
+</style>
+{{ end }}
