@@ -24,3 +24,36 @@
     border-color: var(--tag-border-hover);
     background-color: var(--bg-tag-active);
 }
+
+/* Sidebar CATEGORIES list */
+.sidebar-categories {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar-categories li {
+    margin: 0;
+    line-height: 1.9;
+}
+.sidebar-categories a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #404040;
+    font-size: 0.95em;
+    text-decoration: none;
+}
+.sidebar-categories a:hover {
+    color: #0085a1;
+}
+.sidebar-categories .count {
+    color: #aaa;
+    font-size: 0.85em;
+    margin-left: 0.5em;
+}
+[data-theme="dark"] .sidebar-categories a {
+    color: var(--text-color, #ddd);
+}
+[data-theme="dark"] .sidebar-categories .count {
+    color: #888;
+}

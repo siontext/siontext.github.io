@@ -2,7 +2,7 @@
 title: "!! 안티패턴 — Kotlin의 null 안전성을 스스로 무너뜨리지 마라"
 date: 2026-06-24T00:01:00+09:00
 tags: ["Kotlin", "null safety", "안티패턴", "백엔드"]
-categories: ["개발"]
+categories: ["OOP 객체지향"]
 ---
 
 # !! 안티패턴 — Kotlin의 null 안전성을 스스로 무너뜨리지 마라

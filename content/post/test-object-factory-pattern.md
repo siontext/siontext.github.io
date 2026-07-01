@@ -2,7 +2,7 @@
 title: "Test Object Factory Pattern — 프로덕션 코드를 오염시키지 않고 테스트 객체 만들기"
 date: 2026-06-15
 tags: ["Kotlin", "Testing", "FixtureMonkey", "Test Object Factory", "백엔드"]
-categories: ["개발"]
+categories: ["OOP 객체지향"]
 ---
 
 # Test Object Factory Pattern — 프로덕션 코드를 오염시키지 않고 테스트 객체 만들기

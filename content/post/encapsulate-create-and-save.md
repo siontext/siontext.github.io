@@ -2,7 +2,7 @@
 title: "도메인 생성과 저장의 캡슐화 — postPort.save를 Post.create 내부로"
 date: 2026-06-22T00:00:00+09:00
 tags: ["OOP", "캡슐화", "도메인 주도 설계", "레이어드 아키텍처", "Kotlin", "백엔드"]
-categories: ["개발"]
+categories: ["OOP 객체지향"]
 ---
 
 # 도메인 생성과 저장의 캡슐화 — postPort.save를 Post.create 내부로

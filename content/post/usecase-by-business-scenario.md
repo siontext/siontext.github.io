@@ -2,7 +2,7 @@
 title: "UseCase 설계 원칙 — Action 단위가 아닌 비즈니스 시나리오 단위로 묶어라"
 date: 2026-06-24T00:00:00+09:00
 tags: ["OOP", "UseCase", "레이어드 아키텍처", "응집도", "Kotlin", "백엔드"]
-categories: ["개발"]
+categories: ["OOP 객체지향"]
 ---
 
 # UseCase 설계 원칙 — Action 단위가 아닌 비즈니스 시나리오 단위로 묶어라

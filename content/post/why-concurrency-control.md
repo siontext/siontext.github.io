@@ -2,7 +2,7 @@
 title: "왜 동시성 제어가 필요한가"
 date: 2026-05-16
 tags: ["동시성", "Concurrency", "Race Condition", "Lost Update", "백엔드"]
-categories: ["개발"]
+categories: ["동시성"]
 ---
 
 # 왜 동시성 제어가 필요한가

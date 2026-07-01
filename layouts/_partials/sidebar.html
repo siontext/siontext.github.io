@@ -10,7 +10,7 @@
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
     <section class="visible-md visible-lg">
-	<hr><h5><a href="{{ "/about" | relLangURL }}">ABOUT ME</a></h5>
+	<!--<hr><h5><a href="{{ "/about" | relLangURL }}">ABOUT ME</a></h5>-->
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
             <a href="{{ "/about" | relLangURL }}">
@@ -218,6 +218,26 @@
         </ul>
     </section>
     {{ end }}
+    <!-- Categories -->
+    {{ with .Site.Taxonomies.categories }}
+    {{ if gt (len .) 0 }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>CATEGORIES</h5>
+        <ul class="list-unstyled sidebar-categories">
+            {{ range $name, $taxonomy := . }}
+            {{ $term := $taxonomy.Page }}
+            <li>
+                <a href="{{ $term.RelPermalink }}" title="{{ $term.Title }}">
+                    {{ $term.Title }} <span class="count">{{ len $taxonomy.Pages }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+    {{ end }}
+
     <!-- Featured Tags -->
     {{ if .Site.Params.featured_tags }}
     <section>
