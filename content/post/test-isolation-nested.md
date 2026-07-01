@@ -2,7 +2,7 @@
 title: "단위 테스트 격리 — @Nested로 케이스 단위로 완전 격리하라"
 date: 2026-06-30T00:01:00+09:00
 tags: ["Kotlin", "Testing", "JUnit5", "Nested", "백엔드"]
-categories: ["OOP 객체지향"]
+categories: ["테스트"]
 ---
 
 # 단위 테스트 격리 — @Nested로 케이스 단위로 완전 격리하라

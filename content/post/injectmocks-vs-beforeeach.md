@@ -2,7 +2,7 @@
 title: "@InjectMocks — Mockito가 의존성을 자동으로 주입한다"
 date: 2026-07-01T00:01:00+09:00
 tags: ["Kotlin", "Testing", "Mockito", "InjectMocks", "백엔드"]
-categories: ["OOP 객체지향"]
+categories: ["테스트"]
 ---
 
 # @InjectMocks — Mockito가 의존성을 자동으로 주입한다

@@ -2,7 +2,7 @@
 title: "Fail Fast 원칙 — 사전 검증을 먼저 수행하라"
 date: 2026-06-22T00:01:00+09:00
 tags: ["OOP", "Fail Fast", "도메인 주도 설계", "레이어드 아키텍처", "Kotlin", "백엔드"]
-categories: ["OOP 객체지향"]
+categories: ["객체지향"]
 ---
 
 # Fail Fast 원칙 — 사전 검증을 먼저 수행하라

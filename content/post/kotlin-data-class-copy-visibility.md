@@ -2,7 +2,7 @@
 title: "[Kotlin] data class copy()의 가시성 불일치 문제"
 date: 2026-05-13
 tags: ["Kotlin", "data class", "copy", "ConsistentCopyVisibility"]
-categories: ["OOP 객체지향"]
+categories: ["Kotlin"]
 ---
 
 # [Kotlin] data class copy()의 가시성 불일치 문제
