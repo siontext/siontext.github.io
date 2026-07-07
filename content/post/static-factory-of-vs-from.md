@@ -1,7 +1,7 @@
 ---
 title: "정적 팩토리 메서드 네이밍 — of() vs from()의 기준은 방향이 아니라 파라미터 형태"
 date: 2026-07-07T00:01:00+09:00
-tags: ["OOP", "네이밍 컨벤션", "정적 팩토리 메서드", "레이어드 아키텍처", "헥사고날", "Java", "백엔드"]
+tags: ["OOP", "네이밍 컨벤션", "정적 팩토리 메서드", "레이어드 아키텍처", "헥사고날", "Kotlin", "백엔드"]
 categories: ["객체지향"]
 ---
 
@@ -26,11 +26,11 @@ categories: ["객체지향"]
 
 파라미터가 `String`, `int`, `Long` 등 원시값·기본형 여러 개일 때 사용한다.
 
-```java
+```kotlin
 // of() — 낱개 값 조합
-SendMessageCommand.of(userId, sessionId, message);
-ResolveSessionCommand.of(userId, svcType, sessionId, message);
-SuccessLogCommand.of(chtngSeonId, userId, locgovCd, svcType, ...);
+SendMessageCommand.of(userId, sessionId, message)
+ResolveSessionCommand.of(userId, svcType, sessionId, message)
+SuccessLogCommand.of(chtngSeonId, userId, locgovCd, svcType, ...)
 ```
 
 ---
@@ -39,11 +39,11 @@ SuccessLogCommand.of(chtngSeonId, userId, locgovCd, svcType, ...);
 
 파라미터가 도메인 객체, DTO, 인프라 응답 객체 등 **단일 객체**일 때 사용한다.
 
-```java
+```kotlin
 // from() — 객체 변환
-ChatResponseDto.from(sendMessageResult);   // Application → Presentation
-RagChatResponse.from(fabrixResponse);      // Infrastructure → Domain
-SendMessageCommand.from(requestDto);       // DTO 통째로 넘길 때
+ChatResponseDto.from(sendMessageResult)   // Application → Presentation
+RagChatResponse.from(fabrixResponse)      // Infrastructure → Domain
+SendMessageCommand.from(requestDto)       // DTO 통째로 넘길 때
 ```
 
 ---
@@ -64,10 +64,10 @@ SendMessageCommand.from(requestDto);       // DTO 통째로 넘길 때
 
 > ⚠️ 방향이 Presentation → Application이어도 **객체를 통째로 넘기면 `from()`**이 맞다.
 
-```java
+```kotlin
 // 방향은 Presentation → Application 이지만,
 // requestDto를 통째로 넘기므로 from()
-SendMessageCommand.from(requestDto);
+SendMessageCommand.from(requestDto)
 ```
 
 방향은 어디까지나 판단을 돕는 힌트일 뿐, 최종 기준은 언제나 **넘기는 파라미터가 낱개 값인가, 객체 한 덩어리인가**다.
