@@ -206,6 +206,44 @@
             </div>
     </section>
 	{{ end }}
+    <!-- Visitor Counter (GoatCounter) -->
+    {{ with .Site.Params.goatcounter_code }}
+    <section class="visitor-counter">
+        <hr class="hidden-sm hidden-xs">
+        <h5>VISITORS</h5>
+        <div class="visitor-counter-body" data-gc-code="{{ . }}">
+            <span class="vc-item">
+                <span class="vc-label">TODAY</span>
+                <span class="vc-num vc-today">–</span>
+            </span>
+            <span class="vc-sep">·</span>
+            <span class="vc-item">
+                <span class="vc-label">TOTAL</span>
+                <span class="vc-num vc-total">–</span>
+            </span>
+        </div>
+    </section>
+    <script>
+    (function () {
+        var el = document.querySelector('.visitor-counter-body');
+        if (!el) return;
+        var code = el.getAttribute('data-gc-code');
+        var base = 'https://' + code + '.goatcounter.com/counter/TOTAL.json';
+        // GoatCounter 사이트 타임존(Asia/Seoul) 기준 오늘 날짜
+        var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
+        function load(url, sel) {
+            fetch(url)
+                .then(function (r) { return r.json(); })
+                .then(function (d) {
+                    el.querySelector(sel).textContent = (d && d.count != null) ? d.count : '0';
+                })
+                .catch(function () { el.querySelector(sel).textContent = '-'; });
+        }
+        load(base + '?start=' + today, '.vc-today');
+        load(base, '.vc-total');
+    })();
+    </script>
+    {{ end }}
     <!-- Bookmarks -->
     {{ if .Site.Params.bookmarks }}
     <section>

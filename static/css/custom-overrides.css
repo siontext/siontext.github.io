@@ -57,3 +57,33 @@
 [data-theme="dark"] .sidebar-categories .count {
     color: #888;
 }
+
+/* Sidebar VISITORS counter (GoatCounter) */
+.visitor-counter-body {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.95em;
+    color: #404040;
+}
+.visitor-counter .vc-label {
+    color: #aaa;
+    font-size: 0.8em;
+    letter-spacing: 0.03em;
+    margin-right: 0.3em;
+}
+.visitor-counter .vc-num {
+    font-weight: 600;
+}
+.visitor-counter .vc-sep {
+    color: #ccc;
+}
+[data-theme="dark"] .visitor-counter-body {
+    color: var(--text-color, #ddd);
+}
+[data-theme="dark"] .visitor-counter .vc-label {
+    color: #888;
+}
+[data-theme="dark"] .visitor-counter .vc-sep {
+    color: #555;
+}

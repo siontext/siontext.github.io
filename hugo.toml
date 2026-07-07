@@ -36,6 +36,10 @@ home = ["HTML", "RSS"]
   about_me = true
 
   custom_css = ["css/custom-overrides.css"]
+  custom_js = ["js/goatcounter.js"]
+
+  # GoatCounter 방문자 카운터 사이트 코드 (https://siontext.goatcounter.com)
+  goatcounter_code = "siontext"
 
   [params.social]
   rss            = true
