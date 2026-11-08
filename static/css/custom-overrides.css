@@ -87,3 +87,17 @@
 [data-theme="dark"] .visitor-counter .vc-sep {
     color: #555;
 }
+
+/* Post tables: bootstrap centers td but left-aligns th, so headers and cells
+   don't line up. The table also keeps a light background in dark mode. */
+.post-container .table th,
+.post-container .table td {
+    text-align: left;
+}
+[data-theme="dark"] .post-container .table {
+    background-color: transparent;
+}
+[data-theme="dark"] .post-container .table th,
+[data-theme="dark"] .post-container .table td {
+    color: var(--color-text-main, #c9d1d9);
+}
